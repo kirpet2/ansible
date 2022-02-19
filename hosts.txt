@@ -1,1 +1,4 @@
-localhost
+
+[standing_servers]
+linux_host1 ansible_host=192.168.1.129 ansible_user=admsys ansible_ssh_private_key_file=/home/admsys/.ssh/id_rsa
+home_host ansible_host=127.0.0.1 ansible_user=admsys ansible_ssh_private_key_file=/home/admsys/.ssh/id_rsa

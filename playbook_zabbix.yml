@@ -1,0 +1,15 @@
+---
+- name: Install Zabbix-agent
+  hosts: all
+  become: yes
+  
+  tasks:
+  - name: Install Zabbix-agent
+    apt: name=zabbix-agent state=present
+
+  - name: Start Zabbix-agent on th every boot
+    service: name=zabbix-agent state=started enabled=yes
+
+  handlers:
+  - name: Restart Zabbix
+    service: name=zabbix-agent state=restarted

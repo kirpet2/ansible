@@ -6,6 +6,10 @@
   tasks:
   - name: Install Zabbix-agent
     apt: name=zabbix-agent state=present
+    register: Status_zabbix
+
+  - debug:
+      var: Status_zabbix
 
   - name: Start Zabbix-agent on th every boot
     service: name=zabbix-agent state=started enabled=yes

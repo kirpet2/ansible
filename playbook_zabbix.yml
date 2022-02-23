@@ -4,8 +4,12 @@
   become: yes
   
   tasks:
-  - name: Install Zabbix-agent
-    apt: name=zabbix-agent state=present
+  - name: Install Program
+    apt: name={{item}} state=present
+    loop:
+        - mc
+        - zabbix-agent
+        - htop
     register: Status_zabbix
 
   - debug:
